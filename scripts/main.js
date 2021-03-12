@@ -49,6 +49,23 @@ const filterMaterial = (whatFilter) => {
     makeLegoList(filterArray);
 }
 
+const searchDom = document.querySelector('#searchButton')
+const searchBarDom = document.querySelector('#searchBar')
+searchDom.addEventListener('click', (event) => {
+  const searchBarValue = searchBarDom.value;
+  console.log(`search bar value is ${searchBarValue}`)
+  filterSingleItem(searchBarValue);
+})
+
+const filterSingleItem = (whatFilter) => {
+  const filterArray = useLegos().filter(singleLego => {
+      if (singleLego.LegoId === whatFilter) {
+          return singleLego;
+      }
+  })
+  makeLegoList(filterArray);
+}
+
 const startEIA = () => {
 	loadLegos()
 	.then(legoArray => {

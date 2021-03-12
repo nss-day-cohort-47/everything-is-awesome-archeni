@@ -29,6 +29,25 @@ const filterLegos = (whatFilter) => {
 	makeLegoList(filterArray);
 }
 
+const dropdownDom = document.querySelector('#showMaterials')
+
+dropdownDom.addEventListener('change', (event) => {
+  if(event.target.id === 'showMaterials') {
+    const material = (event.target.value);
+    filterMaterial(material);
+  } else if (event.target.id === 'showAll') {
+    makeLegoList(useLegos());
+  }
+})
+
+const filterMaterial = (whatFilter) => {
+    const filterArray = useLegos().filter(singleLego => {
+        if (singleLego.Material.includes(whatFilter)) {
+            return singleLego;
+        }
+    })
+    makeLegoList(filterArray);
+}
 
 const startEIA = () => {
 	loadLegos()

@@ -13,3 +13,25 @@ small {
 nav {
   margin-top: 1em;
 }
+
+#showMaterials {
+  background-color: #3498DB;
+  color:gold;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+#showMaterials:hover, #showMaterials:focus {
+  background-color: #2980B9;
+}
+
+#dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
